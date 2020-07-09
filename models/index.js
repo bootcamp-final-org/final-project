@@ -1,3 +1,5 @@
 module.exports = {
-  Book: require("./user")
+  Students: require("./students"),
+  Tutors: require("./tutors"),
+  Calendar: require("./calendar"),
 };
