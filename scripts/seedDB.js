@@ -74,9 +74,21 @@ const tutorsSeed = [
  
 ];
 
-db.Book
+db.Students
   .remove({})
-  .then(() => db.Book.collection.insertMany(bookSeed))
+  .then(() => db.Students.collection.insertMany(studentsSeed))
+  .then(data => {
+    console.log(data.result.n + " records inserted!");
+    process.exit(0);
+  })
+  .catch(err => {
+    console.error(err);
+    process.exit(1);
+  });
+
+  db.Tutors
+  .remove({})
+  .then(() => db.Tutors.collection.insertMany(tutorsSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
