@@ -8,22 +8,68 @@ mongoose.connect(
   "mongodb://localhost/reactreadinglist"
 );
 
-const userSeed = [
+const studentsSeed = [
   {
-    userName: "",
-    password: "",
-    email: "",
+    username: "ronjohn4",
+    password: "abcde12345",
+    email: "ronald@example.com",
     age: 12,
-    grade: "",
-    availability: [],
-    subjects: [],
+    grade: "5",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    subjects: ["Math", "History"]
   },
   {
-    title: "Lord of the Flies",
-    author: "William Golding",
-    synopsis:
-      "The tale of a party of shipwrecked schoolboys, marooned on a coral island, who at first enjoy the freedom of the situation but soon divide into fearsome gangs which turn the paradise island into a nightmare of panic and death.",
-    date: new Date(Date.now())
+    username: "jimmy707",
+    password: "john11@20!92874$",
+    email: "jimmyk@example.com",
+    age: 15,
+    grade: "9",
+    availability: [{"Tuesday" : "5:00"}, {"Friday" : "7:00"}],
+    subjects: ["Algebra 1", "Spanish 1"]
+  },
+ 
+];
+
+const tutorsSeed = [
+  {
+    name: "Stephanie Hasse",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Math"
+  },
+  {
+    name: "John Jones",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Science"
+  },
+  {
+    name: "Timothy Baker",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Algebra 1"
+  },
+  {
+    name: "Tom Hall",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Chemistry"
+  },
+  {
+    name: "Stephanie Hasse",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Math"
+  },
+  {
+    name: "Stephanie Hasse",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Math"
+  },
+  {
+    name: "Stephanie Hasse",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Math"
+  },
+  {
+    name: "Stephanie Hasse",
+    availability: [{"Monday" : "12:15"}, {"Wednesday" : "1:00"}],
+    main_subject: "Math"
   },
  
 ];
