@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { FormBtn, TextArea, Input } from '../Form'
 import API from '../../utils/API'
+import { signUpUser } from './AuthApi'
+
 
 export default class SignUp extends Component {
 
@@ -25,14 +27,13 @@ export default class SignUp extends Component {
           API.saveUser({
             firstName, lastName, email, password
           })
-            .then(res => this.loadBooks())
+            .then(res => signUpUser())
             .catch(err => console.log(err));
         }
         else {
             this.setState({error: "Please enter all required fields."})
         }
       };
-
 
 
     render() {
@@ -44,7 +45,7 @@ export default class SignUp extends Component {
                 <Input name="email" type="email" placeholder="Email" onChange={this.handleChange}  />
                 <Input name="password" type="password" placeholder="Password" onChange={this.handleChange}  />
                 {/* <TextArea rows="2" /> */}
-                <FormBtn onClick={this.handleFormSubmit}>Login</FormBtn>
+                <FormBtn onClick={this.handleFormSubmit}>Sign Up</FormBtn>
                 <p>{this.state.error}</p>
 
             </div>

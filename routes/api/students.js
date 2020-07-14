@@ -25,7 +25,7 @@ router
   // Load User model
   const db = require('../../models');
   
-  // @route   GET api/users/Signup
+  // @route   GET api/students/Signup
   // @desc    Signup user
   // @access  Public
   router.post('/signup', (req, res) => {
@@ -62,7 +62,7 @@ router
     });
   });
   
-  // @route   GET api/users/Signin
+  // @route   GET api/students/Signin
   // @desc    Signin User / Returning JWT Token
   // @access  Public
   router.post('/login', (req, res) => {
@@ -110,7 +110,7 @@ router
     });
   });
   
-  // @route   GET api/users/current
+  // @route   GET api/students/current
   // @desc    Return current user
   // @access  Private
   router.get(
