@@ -6,6 +6,7 @@ import Nav from "./components/Nav";
 import Home from "./components/Home/Home";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
+import Dashboard from "./components/Dashboard/Dashboard";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={SignUp} />
+          <Route exact path="/dashboard/" component={Dashboard} />
           <Route exact path="/books/:id" component={Detail} />
           <Route component={NoMatch} />
         </Switch>
