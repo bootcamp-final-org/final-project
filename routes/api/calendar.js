@@ -13,4 +13,9 @@ router
   .put(controller.update)
   .delete(controller.remove);
 
+// Matches with "/api/calendar/:id"
+router
+.route("/match/:id")
+.get(controller.match)
+
 module.exports = router;

@@ -7,7 +7,8 @@ const studentsSchema = new Schema({
   synopsis: String,
   date: { type: Date, default: Date.now },
   tutor: [ {type : Schema.Types.ObjectId, ref : 'Tutors'} ],
-  selected_availability: [ {type : Schema.Types.ObjectId, ref : 'Calendar'} ]
+  selected_availability: [ {type : Schema.Types.ObjectId, ref : 'Calendar'} ],
+  availability: [{ type: String, required: true }]
 });
 
 const Students = mongoose.model("Students", studentsSchema);
