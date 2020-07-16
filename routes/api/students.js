@@ -32,9 +32,9 @@ router
     const { errors, isValid } = validateSignupInput(req.body);
   
     // Check Validation
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
+    // if (!isValid) {
+    //   // return res.status(400).json(errors);
+    // }
   
     db.Students.findOne({ email: req.body.email }).then(user => {
       if (user) {
@@ -67,11 +67,6 @@ router
   // @access  Public
   router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);
-  
-    // Check Validation
-    if (!isValid) {
-      return res.status(400).json(errors);
-    }
   
     const email = req.body.email;
     const password = req.body.password;

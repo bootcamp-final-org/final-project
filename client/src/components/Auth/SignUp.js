@@ -12,6 +12,7 @@ export default class SignUp extends Component {
         lastName: "",
         email: "",
         password: "",
+        isRedirect: false,
         error:""
       };
 
@@ -21,15 +22,16 @@ export default class SignUp extends Component {
     }
 
     handleFormSubmit = event => {
+      console.log(this.state)
         event.preventDefault();
         if (this.state.firstName && this.state.lastName) {
           const{firstName, lastName, email, password} = this.state;
-
-          API.saveUser({
-            firstName, lastName, email, password
+          const user = {firstName, lastName, email, password};
+          signUpUser(user).then(result => {
+            if(result.data) {
+              this.setState({ isRedirect: true})
+            }
           })
-            .then(res => signUpUser())
-            .catch(err => console.log(err));
         }
         else {
             this.setState({error: "Please enter all required fields."})
@@ -39,6 +41,9 @@ export default class SignUp extends Component {
 
     render() {
       console.log(this.state.error)
+      if(this.state.isRedirect) {
+        return <Redirect to="/"/>
+      }
         return (
             <div>
                 <Input name="firstName" type="text" placeholder="First Name" onChange={this.handleChange} />
