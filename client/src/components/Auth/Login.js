@@ -8,6 +8,7 @@ import "./styles.css";
 export default class Login extends Component {
   state = {
     email: "",
+    firstName: "",
     password: "",
     isRedirect: false,
     id: "",
@@ -20,14 +21,15 @@ export default class Login extends Component {
   };
 
   handleFormSubmit = (event) => {
+    console.log(this.state);
     event.preventDefault();
     if (this.state.email && this.state.password) {
-      const { email, password, id } = this.state;
-      const user = { email, password };
+      const { email, password, id, firstName } = this.state;
+      const user = { email, password, id, firstName };
       signInUser(user).then((result) => {
-        console.log("result" + result);
-        if (result.data) {
-          this.setState({ isRedirect: true, id: result.data._id });
+        console.log(user);
+        if (result) {
+          this.setState({ isRedirect: true, id: result.data.data._id });
         }
       });
     } else {
@@ -36,8 +38,9 @@ export default class Login extends Component {
   };
 
   render() {
+    console.log(this.state.error);
     if (this.state.isRedirect) {
-      return <Redirect to={`/dashboard/${this.state.id}`} />;
+      return <Redirect to={`/current`} />;
     }
     return (
       <div className="row">
@@ -49,8 +52,8 @@ export default class Login extends Component {
           </div>
         </div>
         <div className="col-sm-4 form">
-          <Input type="email" label="Username" placeholder="Username" />
-          <Input type="password" label="Password" placeholder="Password" />
+          <Input name="email" type="email" label="email" placeholder="Email" onChange={this.handleChange}/>
+          <Input name="password" type="password" label="Password" placeholder="Password" onChange={this.handleChange}/>
           {/* <TextArea rows="2" /> */}
           <FormBtn onClick={this.handleFormSubmit}>Login</FormBtn>
         </div>
