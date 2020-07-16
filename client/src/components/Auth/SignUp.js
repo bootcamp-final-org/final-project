@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { FormBtn, TextArea, Input } from '../Form'
 import API from '../../utils/API'
 import { signUpUser } from './AuthApi'
+import { Redirect } from "react-router-dom"
 
 
 export default class SignUp extends Component {
@@ -46,6 +47,8 @@ export default class SignUp extends Component {
                 <Input name="password" type="password" placeholder="Password" onChange={this.handleChange}  />
                 {/* <TextArea rows="2" /> */}
                 <FormBtn onClick={this.handleFormSubmit}>Sign Up</FormBtn>
+    
+    
                 <p>{this.state.error}</p>
 
             </div>

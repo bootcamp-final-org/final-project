@@ -5,7 +5,7 @@ import jwt_decode from 'jwt-decode';
 export const signUpUser = async (userData, history) => {
   try {
     await axios.post('/api/students/signup', userData);
-    history.push('/dashboard');
+    this.setState({redirect: true});
   } catch (err) {
     console.log(err);
   }
@@ -14,7 +14,7 @@ export const signUpUser = async (userData, history) => {
 //Sign in - Get User Token
 export const signInUser = async userData => {
   try {
-    const res = await axios.post('/api/students/signin', userData);
+    const res = await axios.post('/api/students/login', userData);
     //save to localstorage
     const { token } = res.data;
     //set token to localStorage
