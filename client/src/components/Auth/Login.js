@@ -27,7 +27,7 @@ export default class Login extends Component {
       signInUser(user).then((result) => {
         console.log("result" + result);
         if (result.data) {
-          this.setState({ isRedirect: true, id: result._id });
+          this.setState({ isRedirect: true, id: result.data._id });
         }
       });
     } else {
@@ -42,8 +42,8 @@ export default class Login extends Component {
     return (
       <div className="row">
         <div className="col-sm-4">
-          <div class="login">Login</div>
-          <div class="eula">
+          <div className="login">Login</div>
+          <div className="eula">
             By logging in you agree to the ridiculously long terms that you
             didn't bother to read
           </div>
