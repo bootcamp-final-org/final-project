@@ -1,4 +1,5 @@
 const db = require("../models");
+const { Students } = require("../models");
 
 // Defining methods for the controller
 module.exports = {
@@ -32,6 +33,14 @@ module.exports = {
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())
       .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
+  match: function(req, res) {
+    db.Students
+      .findById({_id: req.params.id})
+      .then(student => {
+        return db.Tutors.find({ availability: { $in: student.availability } })
+      }).then(tutors => res.json(tutors))
       .catch(err => res.status(422).json(err));
   }
 };
