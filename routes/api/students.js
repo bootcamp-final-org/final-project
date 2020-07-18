@@ -66,7 +66,7 @@ router
   // @desc    Login User / Returning JWT Token
   // @access  Public
   router.post('/login', (req, res) => {
-    const { errors, isValid } = validateLoginInput(req.body);
+    // const { errors, isValid } = validateLoginInput(req.body);
   
     const email = req.body.email;
     const password = req.body.password;
@@ -75,15 +75,14 @@ router
     db.Students.findOne({ email }).then(user => {
       // Check for user
       if (!user) {
-        errors.email = 'User not found';
-        return res.status(404).json(errors);
+        return res.status(404).json({errors: "User not found"});
       }
   
       // Check Password
       bcrypt.compare(password, user.password).then(isMatch => {
         if (isMatch) {
           // User Matched
-          const payload = { id: user.id, fullName: `${user.firstName} ${user.lastName}` }; // Create JWT Payload
+          const payload = { id: user._id, fullName: `${user.firstName} ${user.lastName}` }; // Create JWT Payload
   
           // Sign Token
           jwt.sign(
@@ -91,8 +90,12 @@ router
             keys.secretOrKey,
             { expiresIn: 3600 },
             (err, token) => {
+              if(err) {
+                res.status(400).json(err)
+              }
               res.json({
                 success: true,
+                id: user._id,
                 token: 'Bearer ' + token
               });
             }
