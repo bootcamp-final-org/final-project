@@ -62,8 +62,8 @@ router
     });
   });
   
-  // @route   GET api/students/Signin
-  // @desc    Signin User / Returning JWT Token
+  // @route   GET api/students/Login
+  // @desc    Login User / Returning JWT Token
   // @access  Public
   router.post('/login', (req, res) => {
     const { errors, isValid } = validateLoginInput(req.body);

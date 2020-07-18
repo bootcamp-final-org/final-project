@@ -23,6 +23,7 @@ export const signInUser = async (userData) => {
     setAuthToken(token);
     //decode token to get user data
     jwt_decode(token);
+    console.log(userData);
   } catch (err) {
     console.log(err);
   }
