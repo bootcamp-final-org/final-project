@@ -5,22 +5,30 @@ import Nav from "./components/Nav";
 import Home from "./components/Home/Home";
 import Login from "./components/Auth/Login";
 import SignUp from "./components/Auth/SignUp";
+import Tutors from "./pages/Tutors";
 import Dashboard from "./components/Dashboard/Dashboard";
 
+import UserContext from './userContext.js';
+
 function App() {
+
+  var [state, setState] = React.useState({})
   return (
-    <Router>
-      <div>
-        <Nav login={true? "Login" : "logout"} about="About" logo="TFH" logout="Logout"/>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/signup" component={SignUp} />
-          <Route exact path="/dashboard/:id" component={Dashboard}/>
-          <Route component={NoMatch} />
-        </Switch>
-      </div>
-    </Router>
+    <UserContext.Provider value={state}>
+      <Router>
+        <div>
+          <Nav login={true? "Login" : "logout"} about="About" logo="TFH" logout="Logout"/>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login"  render={() => <div><Login setStudentState={setState}></Login></div>} />
+            <Route exact path="/signup" component={SignUp} />
+            <Route exact path="/dashboard/:id" component={Dashboard}/>
+            <Route exact path="/tutors" component={Tutors}/>
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+      </Router>
+    </UserContext.Provider>
   );
 }
 

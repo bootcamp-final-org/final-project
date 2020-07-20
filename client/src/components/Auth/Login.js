@@ -28,6 +28,7 @@ export default class Login extends Component {
       const user = { email, password };
       signInUser(user).then((result) => {
         if (result) {
+          this.props.setStudentState({studentId: result.data.id })
           this.setState({ isRedirect: true, id: result.data.id });
         }
         else {
