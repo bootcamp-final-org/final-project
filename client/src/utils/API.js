@@ -9,6 +9,10 @@ export default {
   getUser: function(id) {
     return axios.get("/api/students/" + id);
   },
+   // Gets all users
+   getTutors: function() {
+    return axios.get("/api/tutors");
+  },
   // Deletes the user with the given id
   deleteBook: function(id) {
     return axios.delete("/api/students/" + id);

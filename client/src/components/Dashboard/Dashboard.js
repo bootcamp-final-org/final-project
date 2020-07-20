@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Axios from 'axios';
+import { Link } from "react-router-dom";
 
 
 export default class Dashboard extends Component {
@@ -40,6 +41,7 @@ export default class Dashboard extends Component {
                         </div>
                         <div className="content-center">
                             <div className="doughnut-chart-container">
+                            <button><Link to="/tutors" id="tutor-list">Find a Tutor</Link></button>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
                             </div>
                         </div>
