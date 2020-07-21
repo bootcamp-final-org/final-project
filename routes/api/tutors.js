@@ -13,4 +13,9 @@ router
   .put(controller.update)
   .delete(controller.remove);
 
+router
+  .route("/:id/remove-availability")
+  .put(controller.removeAvailability);
+
+
 module.exports = router;
