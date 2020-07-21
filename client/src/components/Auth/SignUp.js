@@ -46,16 +46,29 @@ export default class SignUp extends Component {
       }
         return (
             <div>
+              <div className="row">
+               <div className="col-lg-4">
+        <div className="card">
+        <div className="card-body">
+          <div className="login">
+            <h2>Sign Up</h2></div>
+          <div className="eula">
+            By logging in you agree to the ridiculously long terms that you
+            didn't bother to read
+          </div>
+        </div>
+              <div className="col-lg-4 form">
                 <Input name="firstName" type="text" placeholder="First Name" onChange={this.handleChange} />
                 <Input name="lastName" type="text" placeholder="Last Name" onChange={this.handleChange}  />
                 <Input name="email" type="email" placeholder="Email" onChange={this.handleChange}  />
                 <Input name="password" type="password" placeholder="Password" onChange={this.handleChange}  />
                 {/* <TextArea rows="2" /> */}
                 <FormBtn onClick={this.handleFormSubmit}>Sign Up</FormBtn>
-    
-    
                 <p>{this.state.error}</p>
-
+                </div>
+                </div>
+            </div>
+            </div>
             </div>
         )
     }
