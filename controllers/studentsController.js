@@ -27,6 +27,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  addAvailability: function(req, res) {
+    db.Students
+      .update({ _id: req.params.id }, {$push: {selected_availability: req.body}})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  },
   remove: function(req, res) {
     db.Students
       .findById({ _id: req.params.id })

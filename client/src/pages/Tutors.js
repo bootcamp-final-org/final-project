@@ -32,9 +32,6 @@ export default class Tutors extends Component {
       };
      
     
-    // tutorList = () => {
-    //     for(v)
-    // }
 
     render() {
         console.log("this is our state in tutors",this.state)
@@ -55,7 +52,7 @@ export default class Tutors extends Component {
                     </Link>
                     {tutor.availability.map((availTime)=> {
                         return (
-                            <AvailButton tutorName={tutor.name} time={availTime}></AvailButton>
+                            <AvailButton tutorName={tutor.name} time={availTime} tutorId={tutor._id}></AvailButton>
                         )
                     })}
                     
