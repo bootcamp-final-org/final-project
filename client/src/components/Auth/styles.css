@@ -1,12 +1,49 @@
 .form {
     margin: 0 auto;
+  
 }
 
-@media (max-width: 767px) {
-    .left {
-      height: 100%;
-      left: 20px;
-      width: calc(100% - 40px);
-      max-height: 270px;
-    }
+.login h2 {
+  color:#FFC015;
+  text-align: center;
+}
+.eula {
+  color: #333333;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  border-radius: 30px;
+  padding: 20px 50px;
+  border:none;
+  background: #FFC015;
+  color: white;
+  text-decoration: none;
+  float: none !important;
+  width: 100%;
+}
+
+.card {
+  margin-top: 40px;
+  border: none;
+  box-shadow: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
+  border-radius: 8px;
+}
+
+.card-body {
+    padding: 40px;
+}
+
+
+@media (min-width: 992px) {
+.col-lg-4 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 0 auto;
+}
+  
   }
+  

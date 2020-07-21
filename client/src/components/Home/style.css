@@ -13,9 +13,6 @@ html, body {
 
 }
 
-.container-dash {
-    
-}
 
 .row{
     margin: 0 50px;
@@ -69,8 +66,33 @@ header,
   body,
   header,
   .view {
-    height: 1000px;
+    height: 100%;
   }
+
+  .hero-p {
+    color: white;
+    font-family: Proxima Nova;
+    font-size: 14px;
+    padding: 10px 20px;
+}
+
+.hero-h1 {
+    padding: 40px 10px 10px 20px;
+    font-size: 40px;
+}
+
+.container-home {
+    background-image: url("./assets/header-img.png");
+    height: 100vh;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.row{
+    margin: 0 25px;
+}
+
 }
 @media (min-width: 800px) and (max-width: 850px) {
   html,
@@ -79,6 +101,16 @@ header,
   .view {
     height: 600px;
   }
+
+  .container-home {
+    background-image: url("./assets/header-img.png");
+    height: 100vh;
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
 }
 
 
