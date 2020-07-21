@@ -28,8 +28,9 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   removeAvailability: function(req, res) {
-    db.Students
-      .findOneAndUpdate({ _id: req.params.id }, {$pull: {availability: req.body}})
+    console.log(req.body);
+    db.Tutors
+      .update({ _id: req.params.id }, {$pull: {availability: req.body.time}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

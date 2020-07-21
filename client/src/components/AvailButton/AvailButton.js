@@ -13,14 +13,16 @@ import Axios from 'axios';
 
 function AvailButton(props) {
     var user = React.useContext(UserContext)
-        console.log('this is user in context!', user)
+        // console.log('this is user in context!', user)
 
     var selectAvailability = (time,tutorId)  =>{
-        console.log('we got clicked!!!!!!', time, tutorId)
+        console.log(user)
         Axios.put(`api/students/${user.studentId}/add-availability`, {time, tutorId})
         .then(result => {
             console.log(result)
-            // Axios.put(`api/students/${tutorId}/remove-availability`)
+            if (result.data.nModified > 0){
+                Axios.put(`api/tutors/${tutorId}/remove-availability`, {time})
+            }
         })
 
         
