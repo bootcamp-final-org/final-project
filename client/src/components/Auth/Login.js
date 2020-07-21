@@ -54,13 +54,12 @@ export default class Login extends Component {
             By logging in you agree to the ridiculously long terms that you
             didn't bother to read
           </div>
-        
+        </div>
         <div className="col-lg-4 form">
           <Input value={email} name="email" type="email" label="email" placeholder="Email" onChange={this.handleChange}/>
           <Input value={password} name="password" type="password" label="Password" placeholder="Password" onChange={this.handleChange}/>
           <FormBtn onClick={this.handleFormSubmit}>Login</FormBtn>
          <p>{error && error}</p>
-        </div>
         </div>
         </div>
         </div>
