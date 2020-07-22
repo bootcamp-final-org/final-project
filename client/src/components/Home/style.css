@@ -142,3 +142,24 @@ header,
     margin: auto;
     width: 98%;
 }
+
+
+.settings li {
+    padding-left: 0;
+    text-align: left;
+}
+.settings-li {
+    text-align: left;
+    color: #FFC015 !important;
+    font-size: 20px;
+}
+.upcoming-sesssion, .settings {
+    text-align: left;
+    padding-left: 0;
+}
+
+.session-list-item h3 {
+    font-size: 30px;
+    font-weight: 400;
+    color:#FFC015;
+}

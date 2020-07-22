@@ -42,6 +42,11 @@ export default class Dashboard extends Component {
                     Edit Profile
                   </Link>
                 </a>
+                <a className="button profile-button">
+                    <Link to="/tutors" id="tutor-list">
+                      Chat
+                    </Link>
+                  </a>
               </div>
             </div>
           </div>
@@ -49,14 +54,21 @@ export default class Dashboard extends Component {
             <div className="card">
               <div className="card-body">
                 <div className="page-heading">
-                  <h1>Subscription Settings</h1>
+                  <h1>Settings</h1>
                 </div>
                 <div className="eula">
-                  <button className="button">
-                    <Link to="/tutors" id="tutor-list">
-                      Chat
-                    </Link>
-                  </button>
+                  <ul className="settings">
+                    <li>
+                    <a className="settings-li">Billing</a>
+                    </li>
+                    <li>
+                    <a className="settings-li">Support</a>
+                    </li>
+                    <li>
+                    <a className="settings-li">Support</a>
+                    </li>
+                  </ul>
+      
                 </div>
               </div>
             </div>
@@ -70,12 +82,13 @@ export default class Dashboard extends Component {
                   <h1>Find a Tutor</h1>
                 </div>
                 <div className="eula">
-                  <button className="button">
+                
+                </div>
+                <a className="button profile-button">
                     <Link to="/tutors" id="tutor-list">
                       View All Tutors
                     </Link>
-                  </button>
-                </div>
+                  </a>
               </div>
             </div>
           </div>
@@ -86,10 +99,10 @@ export default class Dashboard extends Component {
                   <h1>Upcomming Sessions</h1>
                 </div>
                 <div className="eula">
-                  <p>List goes here</p>
-                  <ul>
+  
+                  <ul className="upcoming-sesssion">
                     {data.selected_availability.map(date => {
-                      return(<li>{date.name} {date.time}</li>)
+                      return(<li className="session-list-item"><h3>{date.name}</h3><p>{date.time}</p> </li>)
                     })}
                   </ul>
                 </div>

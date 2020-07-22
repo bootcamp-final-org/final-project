@@ -39,13 +39,17 @@ export default class Tutors extends Component {
     return (
 
       <div>
-        <h1>List of Tutors</h1>
-       
+        <div className="container">
+        <div className="row">
+          <div className="col-lg-4">
+        <h1 className="page-title">List of Tutors</h1>
+        </div>
+        
           {this.state.tutors.length ? (
              <ul className="tutor-list">
             <li className="tutor-block">
               {this.state.tutors.map((tutor) => (
-                <div className="col-md-8">
+                <div className="col-md-8 tutor-card">
                   <div className="card">
                     <div className="card-body">
                       <div className="tutor-name-block">
@@ -75,6 +79,8 @@ export default class Tutors extends Component {
             <h3>No Results to Display</h3>
           )}
       
+        </div>
+        </div>
         </div>
     );
   }
