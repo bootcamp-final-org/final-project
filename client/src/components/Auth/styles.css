@@ -14,7 +14,8 @@ p {
 .eula {
   color: #333333;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .button {
@@ -38,7 +39,7 @@ a#tutor-list {
   border: none;
   box-shadow: 0 12px 15px 0 rgba(0,0,0,.24), 0 17px 50px 0 rgba(0,0,0,.19);
   border-radius: 8px;
-  min-height: 250px;
+  min-height: 300px;
 }
 
 .card-body {
@@ -62,4 +63,12 @@ a#tutor-list {
 
   ul {
     list-style: none;
+  }
+
+  .tutor-card {
+    margin: 0 auto;
+  }
+
+  .page-title {
+    text-align: center;
   }
