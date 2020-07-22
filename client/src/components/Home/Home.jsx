@@ -14,10 +14,7 @@ export default class Home extends Component {
                 <h1 className="hero-h1">
                   Teaching assistance for your child. Anywhere. Anytime.
                 </h1>
-                <p className="lead hero-p">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Neque, exercitationem vitae sequi error repudiandae quasi
-                  necessitatibus illum. Hic, asperiores totam amet mollitia in
-                  repudiandae eligendi ipsum non. Est, veritatis, saepe!</p>
+                <p className="lead hero-p">Online learning just got so much easier. Whether you are on the go, unable to commute, TOLC is able to connect your child with certified tutors accross the U.S.</p>
                 <Link to="/signup" id="signup">Sign Up</Link>
               </div>
             </div>
