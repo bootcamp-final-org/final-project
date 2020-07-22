@@ -1,0 +1,22 @@
+.Logo {
+    background-image: url(../Home/assets/logo.svg);
+    
+}
+
+img {
+    max-width: 50%;
+}
+
+.nav {
+    float:right;
+    width: 50%;
+}
+
+
+a {
+    color: #ffc015;
+}
+
+.nav-links{
+    text-align: right;
+}

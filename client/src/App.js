@@ -17,7 +17,7 @@ function App() {
     <UserContext.Provider value={state}>
       <Router>
         <div>
-          <Nav login={true? "Login" : "logout"} about="About" logo="TFH" logout="Logout"/>
+          <Nav login={true? "Login" : "Logout"} about="About" logout="Logout"/>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login"  render={() => <div><Login setStudentState={setState}></Login></div>} />

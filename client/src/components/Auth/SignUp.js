@@ -46,6 +46,7 @@ export default class SignUp extends Component {
       }
         return (
             <div>
+              <div className="container-home">
               <div className="row">
                <div className="col-lg-4">
         <div className="card">
@@ -67,6 +68,7 @@ export default class SignUp extends Component {
                 <p>{this.state.error}</p>
                 </div>
                 </div>
+            </div>
             </div>
             </div>
             </div>
