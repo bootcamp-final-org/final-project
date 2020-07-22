@@ -37,9 +37,32 @@ export default class Dashboard extends Component {
                 <div className="eula">
                   <p>Let's finish setting up your profile.</p>
                 </div>
+                <a className="button profile-button">
+                  <Link to="/tutors" id="tutor-list">
+                    Edit Profile
+                  </Link>
+                </a>
               </div>
             </div>
           </div>
+          <div className="col-md-4">
+            <div className="card">
+              <div className="card-body">
+                <div className="page-heading">
+                  <h1>Subscription Settings</h1>
+                </div>
+                <div className="eula">
+                  <button className="button">
+                    <Link to="/tutors" id="tutor-list">
+                      Chat
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="row">
           <div className="col-md-4">
             <div className="card">
               <div className="card-body">
@@ -49,25 +72,7 @@ export default class Dashboard extends Component {
                 <div className="eula">
                   <button className="button">
                     <Link to="/tutors" id="tutor-list">
-                      Find a Tutor
-                    </Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          </div>
-          <div className="row">
-          <div className="col-md-4">
-            <div className="card">
-              <div className="card-body">
-                <div className="page-heading">
-                  <h1>Message your Tutor</h1>
-                </div>
-                <div className="eula">
-                  <button className="button">
-                    <Link to="/tutors" id="tutor-list">
-                      Find a Tutor
+                      View All Tutors
                     </Link>
                   </button>
                 </div>

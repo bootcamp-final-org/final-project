@@ -44,6 +44,7 @@ export default class Login extends Component {
       return <Redirect to={`/dashboard/${this.state.id}`} />;
     }
     return (
+      <div className="container-home">
       <div className="row">
         <div className="col-lg-4">
         <div className="card">
@@ -63,6 +64,7 @@ export default class Login extends Component {
         </div>
         </div>
         </div>
+      </div>
       </div>
 
     );

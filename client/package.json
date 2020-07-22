@@ -4,6 +4,8 @@
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.30",
+    "@fortawesome/react-fontawesome": "^0.1.11",
     "axios": "^0.18.1",
     "bootstrap": "^4.5.0",
     "jwt-decode": "^2.2.0",

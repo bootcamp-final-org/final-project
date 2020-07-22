@@ -58,4 +58,8 @@ a#tutor-list {
   }
   
 
-  /*///DASHBOARD////*/
+  /*///Tutor List Page////*/
+
+  ul {
+    list-style: none;
+  }
