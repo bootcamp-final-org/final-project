@@ -52,7 +52,7 @@ export default class Tutors extends Component {
                     </Link>
                     {tutor.availability.map((availTime)=> {
                         return (
-                            <AvailButton tutorName={tutor.name} time={availTime} tutorId={tutor._id}></AvailButton>
+                            <AvailButton tutorName={tutor.name} time={availTime} tutorId={tutor._id} history={this.props.history}></AvailButton>
                         )
                     })}
                     

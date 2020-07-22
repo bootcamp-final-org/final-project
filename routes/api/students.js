@@ -27,6 +27,7 @@ const validateLoginInput = require("../../validation/login");
 // Load User model
 const db = require("../../models");
 
+
 // @route   GET api/students/Signup
 // @desc    Signup user
 // @access  Public
@@ -127,5 +128,11 @@ router.get(
     });
   }
 );
+
+// logout route
+router.get('/logout', function(req, res){
+  req.logout();
+  res.status(200);
+});
 
 module.exports = router;
