@@ -1,5 +1,47 @@
 .avail-btn {
-    float: right;
-    color:green;
+  border-radius: 30px;
+  padding: 20px 50px;
+  border: 2px solid #ffc015;
+  background: white;
+  color: #ffc015;
+  text-decoration: none;
+  margin-top: 20px;
+  max-width: 300px;
+
+}
+
+.avail-btn:hover {
+  border: none;
+  background: #ffc015;
+  color: white;
+}
+
+.avail-buttons-block {
+  margin: 0 auto;
+  display: inline;
+}
+
+@media (max-width: 740px) {
+  .avail-btn {
+    width: 100%;
   }
+}
+
+.tutor-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  -ms-box-orient: horizontal;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
   
+}
+
+.tutor-block{
+display: flex;
+flex-wrap: wrap;
+}
