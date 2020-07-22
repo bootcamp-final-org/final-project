@@ -13,6 +13,7 @@ export default class Dashboard extends Component {
     Axios.get(`/api/students/${this.props.match.params.id}`)
       .then((user) => {
         this.setState({ user });
+        console.log(user);
       })
       .catch((error) => {
         console.log(error);
@@ -86,6 +87,11 @@ export default class Dashboard extends Component {
                 </div>
                 <div className="eula">
                   <p>List goes here</p>
+                  <ul>
+                    {data.selected_availability.map(date => {
+                      return(<li>{date.name} {date.time}</li>)
+                    })}
+                  </ul>
                 </div>
               </div>
             </div>

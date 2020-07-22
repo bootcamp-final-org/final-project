@@ -29,8 +29,9 @@ module.exports = {
   },
   removeAvailability: function(req, res) {
     console.log(req.body);
+    const avail = {_id: req.body.tutorId, time: req.body.time, name: req.body.tutorName}
     db.Tutors
-      .update({ _id: req.params.id }, {$pull: {availability: req.body.time}})
+      .update({ _id: req.params.id }, {$pull: {availability: avail}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

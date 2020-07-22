@@ -60,7 +60,7 @@ export default class Tutors extends Component {
                             <AvailButton
                               tutorName={tutor.name}
                               time={availTime}
-                              tutorId={tutor._id}
+                              tutorId={tutor._id} history={this.props.history}
                             ></AvailButton>
                           );
                         })}
@@ -76,7 +76,6 @@ export default class Tutors extends Component {
           )}
       
         </div>
-
     );
   }
 }

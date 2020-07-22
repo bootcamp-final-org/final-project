@@ -23,7 +23,7 @@ function App() {
             <Route exact path="/login"  render={() => <div><Login setStudentState={setState}></Login></div>} />
             <Route exact path="/signup" component={SignUp} />
             <Route exact path="/dashboard/:id" component={Dashboard}/>
-            <Route exact path="/tutors" component={Tutors}/>
+            <Route exact path="/tutors" render={(props) => <Tutors {...props} />}/>
             <Route component={NoMatch} />
           </Switch>
         </div>

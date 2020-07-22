@@ -14,21 +14,22 @@ import { Redirect } from "react-router-dom"
 
 function AvailButton(props) {
 
-    function display(){
-        alert("You are scheduled for: " + props.time)
-    };
+    // function display(){
+    //     alert("You are scheduled for: " + props.time)
+    // };
 
     var user = React.useContext(UserContext)
         // console.log('this is user in context!', user)
 
-    var selectAvailability = (time,tutorId)  =>{
-        console.log(user)
-        Axios.put(`api/students/${user.studentId}/add-availability`, {time, tutorId})
+    var selectAvailability = (time,tutorId,tutorName)  =>{
+        console.log(user, tutorName)
+        Axios.put(`api/students/${user.studentId}/add-availability`, {time, tutorId, tutorName})
         .then(result => {
             console.log(result)
             if (result.data.nModified > 0){
                 Axios.put(`api/tutors/${tutorId}/remove-availability`, {time});
-                alert(time)
+                alert("You are now scheduled with " + tutorName + " at " + time)
+                props.history.push(`/dashboard/${user.studentId}`)
             }
         })
 
@@ -39,7 +40,7 @@ function AvailButton(props) {
         console.log('Props in avail button!!', props)
         return (
             <div>
-                <button className="avail-btn" onClick={ () => {selectAvailability(props.time, props.tutorId)}}> {props.time} </button>
+                <button className="avail-btn" onClick={ () => {selectAvailability(props.time, props.tutorId, props.tutorName)}}> {props.time} </button>
             </div>
         )
 
