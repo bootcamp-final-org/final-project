@@ -1,4 +1,5 @@
 const db = require("../models");
+const ObjectId = require("mongodb").ObjectId;
 
 // Defining methods for the controller
 module.exports = {
@@ -28,10 +29,10 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   removeAvailability: function(req, res) {
-    console.log(req.body);
-    const avail = {_id: req.body.tutorId, time: req.body.time, name: req.body.tutorName}
+    console.log("time", req.body.time);
+    const objectId = new ObjectId(req.params.id);
     db.Tutors
-      .update({ _id: req.params.id }, {$pull: {availability: avail}})
+      .update({ _id: objectId }, {$pull: {availability: req.body.time}})
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
