@@ -44,7 +44,7 @@ We wanted to keep our look clean and easy to use for students of all ages. We ch
 * Payment/ Stripe Implementation - Tutoring isn't a free service and students will need to be able to pay on a subscription tier. Payment will need to be stored and updated within the application.
 
 ## Demo
-![TOLC gif](link to gif)
+<img src= "client/public/TOLC.gif">
 
 ## Authors
 Haylee McLemore 
