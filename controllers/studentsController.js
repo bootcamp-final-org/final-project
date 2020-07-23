@@ -31,7 +31,7 @@ module.exports = {
   addAvailability: function(req, res) {
     const objectId = new ObjectId(req.params.id);
     const avail = {_id: req.body.tutorId, time: req.body.time, name: req.body.tutorName}
-    console.log(req.body);
+    // console.log(req.body);
     db.Students
       .update({ _id: objectId }, {$push: {selected_availability: avail}})
       .then(dbModel => res.json(dbModel))
